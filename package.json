@@ -1,19 +1,19 @@
 {
-  "name": "react-bootstrap",
-  "version": "1.0.0",
-  "description": "Bootstrap 4 components built with React",
+  "name": "react-bootstrap-plus",
+  "version": "0.0.0",
+  "description": "Bootstrap 4 and Much More components built with React",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/react-bootstrap/react-bootstrap.git"
+    "url": "git+https://github.com/bugwheels94/react-bootstrap-plus.git"
   },
-  "homepage": "https://react-bootstrap.github.io/",
+  "homepage": "https://react-bootstrap-plus.github.io/",
   "sideEffects": false,
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "scripts": {
-    "bootstrap": "yarn && yarn --cwd www",
+    "bootstrap": "npm --prefix www install",
     "build": "node tools/build.js",
-    "build-docs": "yarn --cwd www build",
+    "build-docs": "npm --prefix www build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "dtslint": "dtslint types",
     "format": "eslint . --fix && npm run prettier -- --write",
@@ -53,10 +53,6 @@
     "react-component",
     "bootstrap"
   ],
-  "author": {
-    "name": "Stephen J. Collings",
-    "email": "stevoland@gmail.com"
-  },
   "license": "MIT",
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -137,6 +133,6 @@
     "conventionalCommits": true
   },
   "bugs": {
-    "url": "https://github.com/react-bootstrap/react-bootstrap/issues"
+    "url": "https://github.com/bugwheels94/react-bootstrap-plus/issues"
   }
 }
