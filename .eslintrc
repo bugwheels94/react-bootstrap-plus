@@ -6,6 +6,7 @@
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": "error"
+		"react-hooks/rules-of-hooks": "warn",
+		"prettier/prettier": "error"
   }
 }
