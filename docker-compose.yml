@@ -3,7 +3,6 @@ services:
   react-bootstrap-plus:
     volumes:
       - ./:/home/react-bootstrap-plus
-      - /home/react-bootstrap-plus/node_modules
     build:
       context: .
       dockerfile: ./Dockerfile
