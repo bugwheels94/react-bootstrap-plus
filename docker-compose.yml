@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  react-bootstrap-plus:
+    volumes:
+      - ./:/home/react-bootstrap-plus
+      - /home/react-bootstrap-plus/node_modules
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: tail -F anything
+    network_mode: "none"
