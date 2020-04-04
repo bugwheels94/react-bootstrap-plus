@@ -1,4 +1,4 @@
-# React-Bootstrap
+# React-Bootstrap-Plus
 
 > [Bootstrap 4][bootstrap] components built with [React][react].
 
