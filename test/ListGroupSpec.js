@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import ListGroup from '../src/ListGroup';
+import ListGroupItem from '../src/ListGroupItem';
 
 import { shouldWarn } from './helpers';
 
@@ -51,5 +52,10 @@ describe('<ListGroup>', () => {
 
   it('accepts as prop', () => {
     mount(<ListGroup as="ul" />).assertSingle('ul.list-group');
+  });
+  it('accepts item array', () => {
+    const wrapper = mount(<ListGroup items={[{ value: 'ankit' }]} />);
+    console.log(wrapper.html());
+    expect(wrapper.find(ListGroupItem)).to.have.lengthOf(2);
   });
 });
