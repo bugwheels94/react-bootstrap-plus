@@ -7,7 +7,7 @@ import { useUncontrolled } from 'uncontrollable';
 
 import { useBootstrapPrefix } from './ThemeProvider';
 import AbstractNav from './AbstractNav';
-import ListGroupItem from './ListGroupItem';
+import ListGroupItemComp from './ListGroupItem';
 
 const propTypes = {
   /**
@@ -15,7 +15,7 @@ const propTypes = {
    */
   bsPrefix: PropTypes.string,
 
-  items: PropTypes.arrayOf(PropTypes.object),
+  items: PropTypes.array,
   /**
    * Adds a variant to the list-group
    *
@@ -42,7 +42,7 @@ const defaultProps = {
   variant: null,
   horizontal: null,
 };
-export const ListGroup = ({ $items = false, $ListGroupItem = false }) => {
+export const ListGroup = ({ items = false, ListGroupItem = false }) => {
   const $ListGroup = React.forwardRef((props, ref) => {
     let {
       className,
@@ -70,10 +70,9 @@ export const ListGroup = ({ $items = false, $ListGroupItem = false }) => {
       '`variant="flush"` and `horizontal` should not be used together.',
     );
 
-    if (props.items && $items) {
-      controlledProps.children = $items(props.items);
+    if (props.items && items) {
+      controlledProps.children = items(props.items);
     }
-
     return (
       <AbstractNav
         ref={ref}
@@ -93,7 +92,9 @@ export const ListGroup = ({ $items = false, $ListGroupItem = false }) => {
   $ListGroup.defaultProps = defaultProps;
   $ListGroup.displayName = 'ListGroup';
 
-  if ($ListGroupItem) $ListGroup.Item = $ListGroupItem;
+  if (ListGroupItem) {
+    $ListGroup.Item = ListGroupItem;
+  }
   return $ListGroup;
 };
 export const items = (array) => {
@@ -101,6 +102,6 @@ export const items = (array) => {
     const props = { ...a };
     props.children = a.value;
     props.key = a.value;
-    return <ListGroupItem {...props} />;
+    return <ListGroupItemComp {...props} />;
   });
 };

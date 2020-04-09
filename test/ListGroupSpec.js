@@ -54,8 +54,9 @@ describe('<ListGroup>', () => {
     mount(<ListGroup as="ul" />).assertSingle('ul.list-group');
   });
   it('accepts item array', () => {
-    const wrapper = mount(<ListGroup items={[{ value: 'ankit' }]} />);
-    console.log(wrapper.html());
+    const wrapper = mount(
+      <ListGroup items={[{ value: 'ankit' }, { value: 'ankit2' }]} />,
+    );
     expect(wrapper.find(ListGroupItem)).to.have.lengthOf(2);
   });
 });
