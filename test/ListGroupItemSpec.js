@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import ListGroupItem from '../src/ListGroupItem';
+import ListGroupItem from 'react-bootstrap/ListGroupItem';
 
 describe('<ListGroupItem>', () => {
   it('should output a div', () => {

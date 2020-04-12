@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
+import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import ListGroup from '../src/ListGroup';
-import ListGroupItem from '../src/ListGroupItem';
 
 import { shouldWarn } from './helpers';
 
