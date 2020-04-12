@@ -2,9 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import warning from 'warning';
-
 import { useUncontrolled } from 'uncontrollable';
-
 import { useBootstrapPrefix } from './ThemeProvider';
 import AbstractNav from './AbstractNav';
 import ListGroupItemComp from './ListGroupItem';
@@ -73,6 +71,7 @@ export const ListGroup = ({ items = false, ListGroupItem = false }) => {
     if (props.items && items) {
       controlledProps.children = items(props.items);
     }
+    delete controlledProps.items;
     return (
       <AbstractNav
         ref={ref}

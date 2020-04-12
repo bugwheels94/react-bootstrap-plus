@@ -66,8 +66,10 @@
     "classnames": "^2.2.6",
     "dom-helpers": "^5.1.2",
     "invariant": "^2.2.4",
+    "lodash-es": "^4.17.15",
     "prop-types": "^15.7.2",
     "prop-types-extra": "^1.1.0",
+    "react-bootstrap": "^1.0.0",
     "react-overlays": "^3.0.1",
     "react-transition-group": "^4.0.0",
     "uncontrollable": "^7.0.0",
@@ -124,7 +126,8 @@
     "sinon": "^9.0.1",
     "sinon-chai": "^3.5.0",
     "typescript": "^3.8.3",
-    "webpack": "^4.42.1"
+    "webpack": "^4.42.1",
+    "webpack-bundle-analyzer": "^3.6.1"
   },
   "publishConfig": {
     "directory": "lib"

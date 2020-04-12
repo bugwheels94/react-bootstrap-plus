@@ -1,7 +1,18 @@
-module.exports = (distRoot, optimize) => ({
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
+
+module.exports = (distRoot, optimize, bundle) => ({
+  plugins: bundle
+    ? [
+        new BundleAnalyzerPlugin({
+          analyzerPort: 8188,
+        }),
+      ]
+    : [],
   mode: 'production',
   optimization: {
     minimize: !!optimize,
+    sideEffects: false,
   },
   entry: './src/index.js',
   output: {

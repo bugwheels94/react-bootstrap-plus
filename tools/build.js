@@ -59,7 +59,7 @@ const buildDist = step(
   () =>
     new Promise((resolve, reject) => {
       webpack(
-        [getConfig(distRoot, false), getConfig(distRoot, true)],
+        [getConfig(distRoot, false), getConfig(distRoot, true, !true)],
         async (err, stats) => {
           if (err || stats.hasErrors()) {
             reject(err || stats.toJson().errors);
